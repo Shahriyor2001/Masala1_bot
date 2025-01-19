@@ -12,7 +12,8 @@ export class BotService {
   };
 
   constructor() {
-    const token = process.env.TELEGRAM_BOT_API;
+    
+    const token = "8123451442:AAFg_l3cvkyQtHBeYQ_ounOnKKS5OGO38VU";
     this.bot = new TelegramBot(token, { polling: true });
 
     this.bot.onText(/\/start/, (msg) => {
@@ -48,7 +49,7 @@ export class BotService {
           } else {
             this.bot.sendMessage(
               chatId,
-              `Quiz tugadi! To'g'ri javoblar: ${this.userData.correctAnswer}, Notog'ri javoblar: ${this.userData.invalidAnswer}`,
+              `Savollar tugadi! To'g'ri javoblar: ${this.userData.correctAnswer} ta, Notog'ri javoblar: ${this.userData.invalidAnswer} ta`,
             );
           }
         }
